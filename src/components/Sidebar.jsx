@@ -1,23 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { icons } from '../../public/icons';
 
 const Sidebar = () => {
+  const [extended, setExtended] = useState(false)
+  const onClick = ()=>{
+    setExtended(prev=>!prev)
+  }
+
   return (
-    <div className="min-h-screen hidden md:inline-flex flex-col justify-between bg-[#f0f4f9] px-[15px] pt-2.5 pb-[15px] w-64">
+    <div className={`min-h-screen bg-[#f0f4f9] flex flex-col transition-all duration-300 ${
+        extended ? 'w-64 px-6' : 'w-9 px-4'
+      } hidden md:inline-flex`}>
       <div className="mt-[15px]">
         <img
           src={icons.menu_icon}
           alt="menu"
           className="w-[30px] block ml-2.5 cursor-pointer hover:opacity-70 transition"
+          onClick={onClick}
         />
       </div>
         <div className='flex items-center justify-center'>
       <div className="gap-3 mt-[50px] inline-flex items-center bg-[#e6eaf1] rounded-full text-gray-500 text-sm cursor-pointer hover:bg-[#dde2ea] transition">
-        <img src={icons.plus_icon} alt="new chat" className="h-[30px]" />
-        <span>new chat</span>
+        <img src={icons.plus_icon} alt="new chat" className="h-[30px] w-[25px]" />
+        {extended?<span>new chat</span>:null}
       </div>
       </div>
       <div className="flex flex-col flex-1">
+      {extended?
+      <>
         <p className="mt-[30px] mb-5 text-sm font-medium text-gray-600">Recent</p>
 
         <div className="space-y-1">
@@ -31,22 +41,24 @@ const Sidebar = () => {
             <p className="text-sm pt-1">..</p>
           </div>
         </div>
+        </>
+      :null}
       </div>
 
       <div className="flex flex-col space-y-4 pb-4">
         <div className="flex items-center gap-2.5 cursor-pointer hover:opacity-70 transition">
           <img src={icons.question_icon} alt="help" className="w-[30px] h-[30px]" />
-          <p className="text-sm text-gray-700">Help</p>
+          {extended?<p className="text-sm text-gray-700">Help</p>:null}
         </div>
 
         <div className="flex items-center gap-2.5 cursor-pointer hover:opacity-70 transition">
           <img src={icons.history_icon} alt="history" className="w-[30px] h-[30px]" />
-          <p className="text-sm text-gray-700">Activity</p>
+          {extended?<p className="text-sm text-gray-700">Activity</p>:null}
         </div>
 
         <div className="flex items-center gap-2.5 cursor-pointer hover:opacity-70 transition">
           <img src={icons.setting_icon} alt="settings" className="w-[30px] h-[30px]" />
-          <p className="text-sm text-gray-700">Settings</p>
+          {extended?<p className="text-sm text-gray-700">Settings</p>:null}
         </div>
       </div>
     </div>
