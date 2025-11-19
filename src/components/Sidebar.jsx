@@ -9,8 +9,8 @@ const Sidebar = () => {
 
   return (
     <div className={`min-h-screen bg-[#f0f4f9] flex flex-col transition-all duration-300 ${
-        extended ? 'md:w-64 px-6' : 'md:w-20 px-4 w-15'
-      } md:inline-flex`}>
+        extended ? 'md:w-64 px-6' : 'md:w-20 px-4 w-15 md:block'
+      } `}>
       <div className="mt-[15px]">
         <img
           src={icons.menu_icon}
@@ -20,8 +20,8 @@ const Sidebar = () => {
         />
       </div>
         <div className='flex items-center justify-center'>
-      <div className="gap-3 mt-[50px] py-1.3 px-1 inline-flex items-center bg-[#e6eaf1] rounded-3xl text-gray-500 text-sm cursor-pointer hover:bg-[#dde2ea] transition">
-        <img src={icons.plus_icon} alt="new chat" className="h-[30px] w-[30px]" />
+      <div className="gap-3 my-[30px] py-2 px-1.5 inline-flex items-center bg-[#e6eaf1] rounded-3xl text-gray-500 text-sm cursor-pointer hover:bg-[#dde2ea] transition">
+        <img src={icons.plus_icon} alt="new chat" className="h-5 w-5" />
         {extended?<span>new chat</span>:null}
       </div>
       </div>
@@ -45,7 +45,7 @@ const Sidebar = () => {
       :null}
       </div>
 
-      <div className="flex flex-col space-y-4 pb-4">
+      <div className="flex flex-col space-y-4 pb-4 md:pl-2">
         <div className="flex items-center gap-2.5 cursor-pointer hover:opacity-70 transition">
           <img src={icons.question_icon} alt="help" className="w-[30px] h-[30px]" />
           {extended?<p className="text-sm text-gray-700">Help</p>:null}

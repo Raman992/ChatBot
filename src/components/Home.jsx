@@ -76,7 +76,7 @@ const Home = () => {
           />
           <div className="flex items-center gap-4">
             <img src={icons.mic_icon} alt="mic" className="w-[24px] cursor-pointer" />
-            <img src={icons.send_icon} onClick={onSent} alt="" className="w-[24px] cursor-pointer" />
+            <img src={icons.send_icon} onClick={onSent}  alt="send" className="w-[24px] cursor-pointer" />
           </div>
         </div>
       </div>
