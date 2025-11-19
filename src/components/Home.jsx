@@ -22,7 +22,7 @@ const Home = () => {
     <div className="flex-1 min-h-screen pb-[25vh] relative main">
       {/* NAVBAR */}
       <div className="flex items-center justify-between text-[22px] p-5 text-[#585858]">
-        <p>Gemini Clone</p>
+        <h1>ChatBot</h1>
         <img src={icons.user_icon} alt="" className="w-[50px] rounded-full" />
       </div>
 
@@ -31,12 +31,13 @@ const Home = () => {
         
         {/* GREETING */}
         <div className="my-[50px] text-[56px] text-[#c4c7c5] font-semibold">
-          <p className="leading-tight">
-            Hello <span className="bg-gradient-to-tr from-[#4b90ff] to-[#ff5546] text-transparent bg-clip-text">Developer</span>
-          </p>
+          <h1 className="leading-tight">
+            Hello <span className="bg-linear-to-tr from-[#4b90ff] to-[#ff5546] text-transparent bg-clip-text">Developer</span>
+          </h1>
         </div>
 
         {/* CARDS */}
+        {!showResults &&(
         <div className="grid grid-cols-[repeat(auto-fill,minmax(180px,1fr))] gap-4">
           {[ 
             "Explain React Context",
@@ -58,26 +59,27 @@ const Home = () => {
             </div>
           ))}
         </div>
-
+          )}
       </div>
 
       {/* BOTTOM SEARCH */}
-      <div className="absolute bottom-0 w-full max-w-[900px] px-5 mx-auto">
-        <div className="flex items-center justify-between gap-5 bg-[#f0f4f9] rounded-full py-2.5 px-5">
-          <img src={icons.gallery_icon} alt="" className="w-[24px] cursor-pointer" />
+      <div className="absolute left-0 right-0 bottom-0 w-full px-5 mx-auto">
+        <div className='flex justify-center'>
+        <div className="flex items-center justify-between gap-5 bg-[#cfcfcf] rounded-full py-2.5 px-5 shadow-2xl">
+          <img src={icons.gallery_icon} alt="gallery" className="w-[24px] cursor-pointer" />
           <input
             type="text"
             placeholder="Ask Gemini…"
-            value={input}
+            value={input} 
             onChange={(e) => setInput(e.target.value)}
             className="flex-1 bg-transparent outline-none border-none p-2 text-[18px]"
           />
           <div className="flex items-center gap-4">
-            <img src={icons.mic_icon} alt="" className="w-[24px] cursor-pointer" />
+            <img src={icons.mic_icon} alt="mic" className="w-[24px] cursor-pointer" />
             <img src={icons.send_icon} onClick={onSent} alt="" className="w-[24px] cursor-pointer" />
           </div>
         </div>
-
+      </div>
         <p className="text-[13px] my-4 text-center font-light text-gray-500">
           Gemini may display inaccurate info, so double-check important details.
         </p>
@@ -87,12 +89,12 @@ const Home = () => {
       {showResults && (
         <div className="px-[5%] max-h-[70vh] overflow-y-scroll no-scrollbar">
           <div className="my-10 flex items-center gap-5">
-            <img src={icons.user_icon} alt="" className="w-[40px] rounded-full" />
+            <img src={icons.user_icon} alt="user" className="w-[40px] rounded-full" />
             <p className="text-xl">{recentPrompt}</p>
           </div>
 
           <div className="flex items-start gap-5">
-            <img src={icons.gemini_icon} alt="" className="w-[40px] rounded-full" />
+            <img src={icons.gemini_icon} alt="gemini" className="w-[40px] rounded-full" />
 
             {/* LOADING ANIMATION */}
             {loading ? (
@@ -100,7 +102,7 @@ const Home = () => {
                 {[...Array(6)].map((_, i) => (
                   <hr
                     key={i}
-                    className="rounded bg-gradient-to-r from-[#b1d5ee] via-[#c953e98a] to-[#9ed7ff] bg-[length:800px_50px] h-[20px] animate-[loader_4s_linear_infinite] border-none"
+                    className="rounded bg-linear-to-r from-[#b1d5ee] via-[#c953e98a] to-[#9ed7ff] bg-size-[800px_50px] h-5 animate-[loader_4s_linear_infinite] border-none"
                   />
                 ))}
               </div>

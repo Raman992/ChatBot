@@ -20,8 +20,8 @@ const Sidebar = () => {
         />
       </div>
         <div className='flex items-center justify-center'>
-      <div className="gap-3 mt-[50px] inline-flex items-center bg-[#e6eaf1] rounded-full text-gray-500 text-sm cursor-pointer hover:bg-[#dde2ea] transition">
-        <img src={icons.plus_icon} alt="new chat" className="h-[30px] w-[25px]" />
+      <div className="gap-3 mt-[50px] py-1.3 px-1 inline-flex items-center bg-[#e6eaf1] rounded-3xl text-gray-500 text-sm cursor-pointer hover:bg-[#dde2ea] transition">
+        <img src={icons.plus_icon} alt="new chat" className="h-[30px] w-[30px]" />
         {extended?<span>new chat</span>:null}
       </div>
       </div>
