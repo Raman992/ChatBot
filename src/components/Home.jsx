@@ -1,5 +1,5 @@
 import React from 'react';
-import { icons } from '../../public/icons';
+import { icons } from '../assets/icons/icons';
 import { useContext } from "react";
 import { Context } from '../context/Context';
 

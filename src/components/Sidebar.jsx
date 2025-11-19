@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { icons } from '../../public/icons';
+import { icons } from '../assets/icons/icons';
 
 const Sidebar = () => {
   const [extended, setExtended] = useState(false)
