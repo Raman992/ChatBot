@@ -9,7 +9,7 @@ const Sidebar = () => {
 
   return (
     <div className={`min-h-screen bg-[#f0f4f9] flex flex-col transition-all duration-300 ${
-        extended ? 'md:w-64 px-6' : 'md:w-20 px-4 w-15 md:block'
+        extended ? 'md:w-64 px-6' : 'md:w-20 px-4 w-15 block'
       } `}>
       <div className="mt-[15px]">
         <img
