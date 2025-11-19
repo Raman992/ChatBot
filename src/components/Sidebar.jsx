@@ -9,13 +9,13 @@ const Sidebar = () => {
 
   return (
     <div className={`min-h-screen bg-[#f0f4f9] flex flex-col transition-all duration-300 ${
-        extended ? 'w-64 px-6' : 'w-9 px-4'
-      } hidden md:inline-flex`}>
+        extended ? 'md:w-64 px-6' : 'md:w-20 px-4 w-15'
+      } md:inline-flex`}>
       <div className="mt-[15px]">
         <img
           src={icons.menu_icon}
           alt="menu"
-          className="w-[30px] block ml-2.5 cursor-pointer hover:opacity-70 transition"
+          className="w-[30px] block md:ml-2.5 cursor-pointer hover:opacity-70 transition"
           onClick={onClick}
         />
       </div>
