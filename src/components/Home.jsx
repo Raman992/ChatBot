@@ -59,7 +59,7 @@ const Home = () => {
                 <p className="text-[#585858] text-[17px]">{item}</p>
                 <img
                   src={icons.send_icon}
-                  alt=""
+                  alt="send"
                   className="w-[35px] p-[5px] rounded-[20px] bg-white absolute bottom-2 right-2"
                 />
               </div>
@@ -75,7 +75,7 @@ const Home = () => {
             <img src={icons.gallery_icon} alt="gallery" className="w-[24px] cursor-pointer" />
             <input
               type="text"
-              placeholder="Ask Gemini…"
+              placeholder="Ask Groq..."
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={handleKeyPress}
@@ -88,7 +88,7 @@ const Home = () => {
           </div>
         </div>
         <p className="text-[13px] my-4 text-center font-light text-gray-500">
-          Gemini may display inaccurate info, so double-check important details.
+          Groq may display inaccurate info, so double-check important details.
         </p>
       </div>
 
@@ -101,7 +101,7 @@ const Home = () => {
           </div>
 
           <div className="flex items-start gap-5">
-            <img src={icons.gemini_icon} alt="gemini" className="w-[40px] rounded-full" />
+            <img src={icons.groq_icon} alt="groq" className="w-[40px] rounded-full" />
 
             {/* LOADING ANIMATION */}
             {loading ? <Loading/>: (
