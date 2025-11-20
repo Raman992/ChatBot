@@ -24,7 +24,7 @@ const Home = () => {
   };
 
   return (
-    <div className="flex-1 min-h-screen pb-[25vh] relative main">
+    <div className="flex-1 min-h-screen max-h-screen pb-[25vh] relative main">
       {/* NAVBAR */}
       <div className="flex items-center justify-between text-[22px] p-5 text-[#585858]">
         <h1>ChatBot</h1>
@@ -35,11 +35,11 @@ const Home = () => {
       <div className="max-w-[900px] mx-auto">
 
         {/* GREETING */}
-        <div className="my-[50px] text-[56px] text-[#c4c7c5] font-semibold">
+        {!showResults && (<div className="my-[50px] text-[56px] text-[#c4c7c5] font-semibold">
           <h1 className="leading-tight">
             Hello <span className="bg-linear-to-tr from-[#4b90ff] to-[#ff5546] text-transparent bg-clip-text">Developer</span>
           </h1>
-        </div>
+        </div>)}
 
         {/* CARDS */}
         {!showResults && (
@@ -104,7 +104,7 @@ const Home = () => {
 
             {/* LOADING ANIMATION */}
             {loading ? (
-              <div className="w-full flex flex-col gap-2">
+              <div className="flex-1 flex flex-col gap-2">
                 {[...Array(6)].map((_, i) => (
                   <hr
                     key={i}
@@ -114,9 +114,12 @@ const Home = () => {
                 ))}
               </div>
             ) : (
-              <p className="text-[17px] font-light leading-[1.8] whitespace-pre-wrap">
-                {resultData}
-              </p>
+              <div className="flex-1">
+                <div
+                  className="text-[17px] font-light leading-[1.8] whitespace-pre-wrap prose prose-lg max-w-none"
+                  dangerouslySetInnerHTML={{ __html: resultData }}
+                />
+              </div>
             )}
           </div>
         </div>
