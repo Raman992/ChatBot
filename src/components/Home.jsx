@@ -2,6 +2,7 @@ import React from 'react';
 import { icons } from '../assets/icons/icons';
 import { useContext } from "react";
 import { Context } from '../context/Context';
+import Loading from './Loading';
 
 const Home = () => {
   const {
@@ -103,17 +104,7 @@ const Home = () => {
             <img src={icons.gemini_icon} alt="gemini" className="w-[40px] rounded-full" />
 
             {/* LOADING ANIMATION */}
-            {loading ? (
-              <div className="flex-1 flex flex-col gap-2">
-                {[...Array(6)].map((_, i) => (
-                  <hr
-                    key={i}
-                    className="rounded bg-gradient-to-r from-[#b1d5ee] via-[#c953e98a] to-[#9ed7ff] h-5 animate-[loader_4s_linear_infinite] border-none"
-                    style={{ backgroundSize: '800px 50px' }}
-                  />
-                ))}
-              </div>
-            ) : (
+            {loading ? <Loading/>: (
               <div className="flex-1">
                 <div
                   className="text-[17px] font-light leading-[1.8] whitespace-pre-wrap prose prose-lg max-w-none"
